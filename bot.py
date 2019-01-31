@@ -1,20 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- @FightMan01 Sign out
-0
-0 0 FightMan01/garium-transport
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-garium-transport/bot.py
-22deca5  3 minutes ago
-@FightMan01 FightMan01 Update bot.py
-     
-206 lines (180 sloc)  10.2 KB
 import aiohttp
 import discord
 import asyncio
