@@ -8,7 +8,7 @@ import datetime, time
 import os
 global vtc_help
 global bot_help
-vtc_help = ("GARIUM")
+vtc_help = ["GARIUM"]
 bot_help = ("COMMANDS")
 client = commands.Bot(command_prefix='/')
 Client = discord.Client()
@@ -129,6 +129,7 @@ async def help(ctx):
 async def on_message(message):
     if message.channel.type == discord.ChannelType.private:
         global vtc_help
+        vtc_help = ["GARIUM"]
         await client.process_commands(message)
         contents = message.content.split(" ")
         for word in contents:    
