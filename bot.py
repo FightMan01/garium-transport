@@ -140,7 +140,7 @@ async def on_message(message):
             else:
                 return
 	else:
-		pass
+	    pass
 
 @client.event
 async def on_message(message):
@@ -157,7 +157,7 @@ async def on_message(message):
             else:
                 return
 	else:
-		pass
+	    pass
 	
 @client.command(pass_context=True)
 async def shutdown(ctx):
