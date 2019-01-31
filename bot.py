@@ -139,8 +139,8 @@ async def on_message(message):
                     await client.send_message(message.author, "I can't understand that message! Please try using ``commands`` or ``garium``")
             else:
                 return
-	else:
-	    return False
+    else:
+        pass
 
 @client.event
 async def on_message(message):
@@ -156,8 +156,8 @@ async def on_message(message):
                     await client.send_message(message.author, "I can't understand that message! Please try ``commands`` or ``garium``!")
             else:
                 return
-	else:
-	    return False
+    else:
+        pass
 	
 @client.command(pass_context=True)
 async def shutdown(ctx):
