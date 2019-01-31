@@ -133,7 +133,7 @@ async def on_message(message):
         for word in contents:    
             if word.upper() in vtc_help:
                 try:
-                    await client.send_message(message, "Garium Transport\nGarium Transport is a Virtual Trucking Company which was founded in October 2018 and offers fun while driving and a good membership. At our company, we are going on big events and we also host our self-made convoys. More information can be given by our staff members.\nApplication Form:\nhttps://goo.gl/forms/QAO2X2fMcPAy95Sx1\nOur Logging Platform:\nhttps://vtlog.net/vtc/3817\nIf you have any questions go ahead and ask some of our team.")
+                    await client.send_message(message.author, "Garium Transport\nGarium Transport is a Virtual Trucking Company which was founded in October 2018 and offers fun while driving and a good membership. At our company, we are going on big events and we also host our self-made convoys. More information can be given by our staff members.\nApplication Form:\nhttps://goo.gl/forms/QAO2X2fMcPAy95Sx1\nOur Logging Platform:\nhttps://vtlog.net/vtc/3817\nIf you have any questions go ahead and ask some of our team.")
                 except:
                     return
             else:
@@ -149,9 +149,9 @@ async def on_message(message):
         for word in contents:
             if word.upper() in bot_help:
                 try:
-                    await client.send_message(message, ".")
+                    await client.send_message(message.author, ".")
                 except:
-                    await client.send_message(message, "I can't understand that message! Please try ``commands`` or ``garium``!")
+                    await client.send_message(message.author, "I can't understand that message! Please try ``commands`` or ``garium``!")
             else:
                 return
 
