@@ -129,7 +129,7 @@ async def help(ctx):
 async def on_message(message):
     if message.channel.type == discord.ChannelType.private:
         global vtc_help
-        vtc_help = ["GARIUM"]
+        vtc_help = ["GARIUM", "GARUM"]
         await client.process_commands(message)
         contents = message.content.split(" ")
         for word in contents:    
