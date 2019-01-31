@@ -5,6 +5,10 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import datetime, time
 import os
+global vtc_help
+global bot_help
+vtc_help = ("GARIUM")
+bot_help = ("COMMANDS")
 client = commands.Bot(command_prefix='/')
 Client = discord.Client()
 client.remove_command('help')
@@ -117,7 +121,39 @@ async def inv(ctx):
 
 @client.command(aliases=['commands'], pass_context=True)
 async def help(ctx):
-    await client.send_message(ctx.message.author, "Hello! I'm the own bot of **Garium Transport**")
+    await client.send_message(ctx.message.author, "Hello! I'm the own bot of **Garium Transport**! If you want to know more informations about **my commands**, type ``commands``! If you want to know more about **Garium Transports**, type ``garium``! Have a good day! :sun_with_face:")
+
+
+@client.event
+async def on_message(message):
+    if message.channel.type == discord.ChannelType.private:
+        global vtc_help
+        await client.process_commands(message)
+        contents = message.content.split(" ")
+        for word in contents:    
+            if word.upper() in vtc_help:
+                try:
+                    await client.send_message(message, "Garium Transport\nGarium Transport is a Virtual Trucking Company which was founded in October 2018 and offers fun while driving and a good membership. At our company, we are going on big events and we also host our self-made convoys. More information can be given by our staff members.\nApplication Form:\nhttps://goo.gl/forms/QAO2X2fMcPAy95Sx1\nOur Logging Platform:\nhttps://vtlog.net/vtc/3817\nIf you have any questions go ahead and ask some of our team.")
+                except:
+                    return
+            else:
+                return
+
+
+@client.event
+async def on_message(message):
+    if message.channel.type == discord.ChannelType.private:
+        global bot_help
+        await client.process_commands(message)
+        contents = message.content.split(" ")
+        for word in contents:
+            if word.upper() in bot_help:
+                try:
+                    await client.send_message(message, ".")
+                except:
+                    await client.send_message(message, "I can't understand that message! Please try ``commands`` or ``garium``!")
+            else:
+                return
 
 
 @client.command(pass_context=True)
@@ -162,6 +198,7 @@ async def unmute(ctx, member: discord.Member):
     else:
         embed=discord.Embed(title="Permission denied!", description="You don't have permission to use this command. :x:", color=0xff00f6)
         await client.say(embed=embed)
+
 
 
 
